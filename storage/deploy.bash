@@ -14,8 +14,8 @@ if [ ${EUID:-${UID}} != 0 ]; then
 fi
 
 # ディレクトリ存在チェック
-if [ -d $PWD/stress-check ]; then
-  echo "stress-check directry already exists. Please backup first." >&2
+if [ -d $PWD/stress-check-master ]; then
+  echo "stress-check-master directry already exists. Please backup first." >&2
   echo "--- End $(date "+%Y/%m/%d %k:%M:%S") ${0}"
   exit 1
 fi
@@ -24,9 +24,9 @@ fi
 package_file="$PWD/${1-stress-check.tar.gz}"
 
 # 解凍先（デプロイ元）のディレクトリ
-target_dir=$PWD/stress-check
+target_dir=$PWD/stress-check-master
 
-# tarファイルを解凍（stress-checkディレクトリが作成されなければならない）
+# tarファイルを解凍（stress-check-masterディレクトリが作成されなければならない）
 tar -zxf $package_file
 
 
