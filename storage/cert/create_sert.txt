@@ -1,0 +1,27 @@
+################################################################################
+# オレオレ証明書の作成方法
+
+# カレントディレクトリへ移動
+cd ~/laravel/stress-check/storage/cert
+
+# 秘密鍵作成
+openssl genrsa -aes256 2048 >servername.key
+
+# 秘密鍵のパスワードを外す（Nginx用）
+cp -p servername.key servername.key_back
+sudo openssl rsa -in servername.key -out servername.key
+
+# 証明書発行要求ファイル（中間ファイル）の作成
+openssl req -new -key servername.key -out server.csr -sha256
+# JP
+# Kanagawa
+# Yokohama
+# Organization Name = ""
+# Organizational Unit Name = ""
+# Common Name = "localhost"
+# Email Address = ""
+# A challenge password = ""
+# An optional company name = ""
+
+# オレオレ証明書
+openssl x509 -sha256 -req -days 3650 -in server.csr -signkey servername.key -out server.crt

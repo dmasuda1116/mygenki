@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations":[
+        {
+            "name": "VSCODE",
+            "type": "php",
+            "request": "launch",
+            "port": 9003, //php.iniで設定したポート番号
+            "pathMappings": {
+                "/var/www/html/": "${workspaceRoot}"
+            },
+            "hostname": "localhost"
+        }
+    ]
+}
+// https://stackoverflow.com/questions/62104199/issues-when-debugging-php-in-vscode-using-docker-and-wsl2
+

@@ -1,0 +1,263 @@
+/* -------------------------------------------------- */
+/* Declare heights because of positioning of img element */
+.carousel-item {
+    height: 17rem; /* カルーセルの高さ */
+    transition: transform 0.6s ease; /* 遷移スピード */
+}
+
+/* カルーセル内部のイメージのサイズ設定 */
+.carousel-item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 17rem;
+}
+
+/* 小画面では、カルーセルの左右ボタンを非表示にする */
+.carousel-caption {
+    top: 1rem;
+    right: 3%;
+    left: 3%;
+}
+
+.carousel-control-prev {
+    display: none;
+}
+
+.carousel-control-next {
+    display: none;
+}
+
+.carousel-indicators {
+    margin-right: 3%;
+    margin-left: 3%;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 50px;
+    height: 10px;
+    border-top: 0px solid transparent; /* 打消し */
+    border-bottom: 0px solid transparent; /* 打消し */
+}
+
+/* 小画面以上で、カルーセルの左右ボタンを表示する */
+@media (min-width: 576px) {
+    .carousel-caption {
+        right: 15%;
+        left: 15%;
+    }
+
+    .carousel-control-prev {
+        display: block;
+        width: 15%;
+    }
+
+    .carousel-control-next {
+        display: block;
+        display: block;
+        width: 15%;
+    }
+}
+
+/* -------------------------------------------------- */
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+/* -------------------------------------------------- */
+/* Flexbox */
+.flex-container-class {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* 等幅は、Bootstrapに存在しないので定義 */
+.flex-item-class {
+    flex-basis: 22%;
+}
+.flex-modal-item-class {
+    flex-basis: 30%;
+}
+
+.flex-center-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* -------------------------------------------------- */
+/* コントローラ */
+/* -------------------------------------------------- */
+/* ボタンの色 */
+.custom-button {
+    background-color: #31b56a !important;
+    border-color: #bee395 !important;
+}
+.custom-main-button {
+    background-color: #f57508 !important;
+    border-color: #f5a35d !important;
+}
+
+/* ラジオボタン */
+/* カルーセル内にBootstrapのボタン(Hover状態のボタン)が存在すると、スクロール時にちらつくため、独自定義のものを利用する。 */
+input[type="radio"] {
+    display: none; /* ラジオボタンを非表示にする */
+}
+/* ラジオON */
+input[type="radio"]:checked + label {
+    color: #ffffff; /* チェックON時のフォント色を指定する */
+    background: #2ca35e; /* チェックON時の背景色を指定する */
+}
+/* ラジオOFF */
+.custom-radio {
+    min-height: 3em;
+    border: 2px solid #2ca35e;
+    border-radius: 5px;
+    color: #2ca35e;
+}
+
+/* -------------------------------------------------- */
+/* 共通色 */
+/* -------------------------------------------------- */
+/* 背景色 */
+.custom-background-color {
+    background-color: #faf7ed !important;
+}
+
+/* タイトルの文字色 */
+.custom-font-color {
+    color: #404040 !important;
+}
+
+/* レベルの文字色 */
+.custom-item-font-color {
+    color: #ffffff !important;
+}
+
+/* メッセージの文字色 */
+.custom-info-font-color {
+    color: #0000ff !important;
+}
+/* エラーメッセージの文字色 */
+.custom-error-font-color {
+    color: #ff0000 !important;
+}
+
+/* 項目の背景色（メイン） */
+.custom-item-main-color {
+    background-color: #31b56a !important;
+}
+
+/* 項目の背景色（サブ） */
+.custom-item-sub-color {
+    background-color: #bee395 !important;
+}
+
+/* 水平線の色 */
+.custom-line-color {
+    background-color: #31b56a !important;
+}
+
+/* -------------------------------------------------- */
+/* チェック画面(check.html) */
+.page-class {
+    border: 2px solid #31b56a;
+    border-radius: 20px;
+}
+
+/* -------------------------------------------------- */
+/* 結果画面(result.html) */
+/* レベルごとの色 */
+.custom-level8-main-color {
+    background-color: #ffb8b8 !important;
+}
+.custom-level8-sub-color {
+    background-color: #ffcccc !important;
+}
+.custom-level8-label {
+    border-color: #ffb8b8 !important;
+    background-color: #ffcccc !important;
+}
+
+.custom-level7-main-color {
+    background-color: #ee5253 !important;
+}
+.custom-level7-sub-color {
+    background-color: #ff6b6b !important;
+}
+.custom-level7-label {
+    border-color: #ee5253 !important;
+    background-color: #ff6b6b !important;
+}
+
+.custom-level6-main-color {
+    background-color: #32c9a6 !important;
+}
+.custom-level6-sub-color {
+    background-color: #65d9bd !important;
+}
+.custom-level6-label {
+    border-color: #32c9a6 !important;
+    background-color: #65d9bd !important;
+}
+
+.custom-level5-main-color {
+    background-color: #ffd32a !important;
+}
+.custom-level5-sub-color {
+    background-color: #ffdd59 !important;
+}
+.custom-level5-label {
+    border-color: #ffd32a !important;
+    background-color: #ffdd59 !important;
+}
+
+.custom-level4-main-color {
+    background-color: #17c0eb !important;
+}
+.custom-level4-sub-color {
+    background-color: #18dcff !important;
+}
+.custom-level4-label {
+    border-color: #17c0eb !important;
+    background-color: #18dcff !important;
+}
+
+.custom-level3-main-color {
+    background-color: #2e86de !important;
+}
+.custom-level3-sub-color {
+    background-color: #54a0ff !important;
+}
+.custom-level3-label {
+    border-color: #2e86de !important;
+    background-color: #54a0ff !important;
+}
+
+.custom-level2-main-color {
+    background-color: #c56cf0 !important;
+}
+.custom-level2-sub-color {
+    background-color: #cd84f1 !important;
+}
+.custom-level2-label {
+    border-color: #c56cf0 !important;
+    background-color: #cd84f1 !important;
+}
+
+.custom-level1-main-color {
+    background-color: #8395a7 !important;
+}
+.custom-level1-sub-color {
+    background-color: #a7bdd5 !important;
+}
+.custom-level1-label {
+    border-color: #8395a7 !important;
+    background-color: #a7bdd5 !important;
+}
